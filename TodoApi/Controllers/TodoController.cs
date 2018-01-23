@@ -21,14 +21,14 @@ namespace TodoApi.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public List<TodoItem> Get(int id)
+        public List<Todo> Get(int id)
         {
-            List<TodoItem> returnValue = new List<TodoItem>();
-            returnValue.Add(new TodoItem() { Id = 1, Name = "a", IsComplete = true });
-            returnValue.Add(new TodoItem() { Id = 2, Name = "B", IsComplete = false });
-            returnValue.Add(new TodoItem() { Id = 3, Name = "C", IsComplete = true });
-            returnValue.Add(new TodoItem() { Id = 4, Name = "D", IsComplete = false });
-            returnValue.Add(new TodoItem() { Id = 5, Name = "E", IsComplete = true });
+            List<Todo> returnValue = new List<Todo>();
+            returnValue.Add(new Todo() { Id = 1, Name = "a", IsComplete = true });
+            returnValue.Add(new Todo() { Id = 2, Name = "B", IsComplete = false });
+            returnValue.Add(new Todo() { Id = 3, Name = "C", IsComplete = true });
+            returnValue.Add(new Todo() { Id = 4, Name = "D", IsComplete = false });
+            returnValue.Add(new Todo() { Id = 5, Name = "E", IsComplete = true });
 
             return returnValue;
         }
