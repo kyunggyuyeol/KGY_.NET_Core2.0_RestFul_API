@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TodoApi.App_Code;
+using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
@@ -15,21 +17,30 @@ namespace TodoApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Data1", "Data2" };
         }
 
         // GET: api/Data/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Data Get(int id)
         {
-            return "value";
+            Data data = new Data();
+            data.ID = 1;
+            data.LastName = "GY";
+            data.FirstName = "K";
+            data.PayRate = 10.15;
+            data.StartDate = DateTime.Parse("03/21/1990");
+            data.EndDate = DateTime.Parse("03/21/2090");
+
+            return data;
         }
          
         // POST: api/Data
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Data value)
         {
-            Console.WriteLine(value);
+            DataPer aa = new DataPer();
+            long id = aa.saveData(value);
         }
         
         // PUT: api/Data/5
