@@ -9,17 +9,22 @@ namespace TodoApi.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //// GET api/values
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/values/5 
+        //[HttpGet("{id}")]
+        public string Get([FromQuery]int id, [FromQuery]string foo, [FromQuery]string bar)
         {
+            if(id==0)
+            {
+                return "noData";
+            }
+
             return "value";
         }
 
