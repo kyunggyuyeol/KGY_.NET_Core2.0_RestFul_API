@@ -18,6 +18,7 @@ namespace TodoApi.Controllers
 
         // GET api/values/5 
         //[HttpGet("{id}")]
+        //http://localhost:3000/api/values/?id=1&foo=test&bar=asdf
         public string Get([FromQuery]int id, [FromQuery]string foo, [FromQuery]string bar)
         {
             if(id==0)
